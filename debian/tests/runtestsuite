@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+# notice the / at end in order to load this module
+PACKAGE='punycode'
+SEDCMD="s,require\s*[(]\s*'[.][.]/?([^']*)'\s*[)],require('$PACKAGE/\1'),g"
+
+tmpdir=$(mktemp -d)
+trap 'rm -rf "$tmpdir"' EXIT INT TERM HUP
+
+cp -r tests/ $tmpdir/tests
+find tests/ -name '*.js' -print0 | \
+    xargs -0 -n1  \
+	  sh -c 'set -e; echo "Create: $3"; sed -E "$1" < "$3" > "$2/$3"' sedtape "$SEDCMD" "$tmpdir"
+# avoid false that does not work outside build dir
+mocha -R spec $tmpdir/tests/*.js

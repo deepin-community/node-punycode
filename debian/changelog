@@ -1,0 +1,83 @@
+node-punycode (2.1.1-5) unstable; urgency=medium
+
+  * Add CI on salsa
+  * Rules-Requires-Root: no
+  * Bump standards (no changes)
+
+ -- Bastien Roucariès <rouca@debian.org>  Wed, 01 Sep 2021 19:23:27 +0000
+
+node-punycode (2.1.1-4) unstable; urgency=medium
+
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update standards version to 4.4.1, no changes needed.
+  * Update standards version to 4.5.0, no changes needed.
+  * Apply multi-arch hints.
+    + node-punycode: Add Multi-Arch: foreign.
+  * Remove constraints unnecessary since buster:
+    + Build-Depends: Drop versioned constraint on nodejs.
+    + node-punycode: Drop versioned constraint on nodejs in Depends.
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.5.1, no changes needed.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Sun, 29 Aug 2021 01:52:01 +0100
+
+node-punycode (2.1.1-3) unstable; urgency=medium
+
+  * Move to /usr/share
+  * Bump debhelper and policy (no changes)
+
+ -- Bastien Roucariès <rouca@debian.org>  Fri, 20 Sep 2019 15:48:28 +0200
+
+node-punycode (2.1.1-2) unstable; urgency=medium
+
+  * Fix nocheck build profile.
+  * Run in CI testsuite
+
+ -- Bastien Roucariès <rouca@debian.org>  Wed, 30 May 2018 22:44:17 +0200
+
+node-punycode (2.1.1-1) unstable; urgency=medium
+
+  * New upstream version
+  * Move to salsa
+  * Bump compat and policy
+  * Compile es6 version
+
+ -- Bastien Roucariès <rouca@debian.org>  Wed, 30 May 2018 17:05:47 +0200
+
+node-punycode (2.1.0-3) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Bastien Roucariès <rouca@debian.org>  Fri, 11 Aug 2017 23:36:58 +0200
+
+node-punycode (2.1.0-2) experimental; urgency=medium
+
+  * Fix FTBFS by using manual compat layer
+  * Run testsuite.
+  * Add my new mail address.
+
+ -- Bastien Roucariès <rouca@debian.org>  Mon, 03 Apr 2017 12:46:57 +0200
+
+node-punycode (2.1.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Switch to git-dpm
+  * Update copyright years.
+
+ -- Bastien Roucariès <roucaries.bastien+debian@gmail.com>  Fri, 24 Mar 2017 16:02:54 +0100
+
+node-punycode (2.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump standard version (no changes).
+  * Use compat version 10.
+
+ -- Bastien Roucariès <roucaries.bastien+debian@gmail.com>  Mon, 07 Nov 2016 22:17:15 +0100
+
+node-punycode (1.3.2+git702cc2da-1) unstable; urgency=low
+
+  * Initial release (Closes: #797912)
+  * Use git revision in order to fix two upstream bug.
+
+ -- Bastien Roucariès <roucaries.bastien+debian@gmail.com>  Thu, 03 Sep 2015 15:54:48 +0200

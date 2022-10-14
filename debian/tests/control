@@ -1,0 +1,5 @@
+Tests: require
+Depends: node-punycode, nodejs (>= 6)
+
+Tests: runtestsuite
+Depends: node-punycode, nodejs (>= 6), mocha (>= 4), node-assert
