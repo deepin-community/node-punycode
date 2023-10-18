@@ -1,3 +1,29 @@
+node-punycode (2.2.3-2) unstable; urgency=medium
+
+  * Break also against older libjs-punycode
+
+ -- Bastien Roucariès <rouca@debian.org>  Mon, 31 Jul 2023 18:48:52 +0000
+
+node-punycode (2.2.3-1) unstable; urgency=medium
+
+  * Acknowledge NMU
+  * Update standards version to 4.6.2, no changes needed.
+  * New upstream version
+  * Provides libjs-punycode
+
+ -- Bastien Roucariès <rouca@debian.org>  Mon, 31 Jul 2023 09:29:48 +0000
+
+node-punycode (2.1.1-6) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update standards version to 4.6.1, no changes needed.
+  * Remove constraints unnecessary since buster (oldstable):
+    + Build-Depends: Drop versioned constraint on dpkg-dev and mocha.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 21 Nov 2022 09:23:51 +0000
+
 node-punycode (2.1.1-5) unstable; urgency=medium
 
   * Add CI on salsa

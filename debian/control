@@ -5,12 +5,11 @@ Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.deb
 Uploaders: Bastien Roucariès <rouca@debian.org>
 Build-Depends:
  debhelper-compat (= 13)
- , dpkg-dev (>= 1.17.14)
  , dh-buildinfo
  , nodejs
- , mocha (>= 1.20.1) <!nocheck>
+ , mocha <!nocheck>
  , node-assert <!nocheck>
-Standards-Version: 4.6.0
+Standards-Version: 4.6.2
 Rules-Requires-Root: no
 Homepage: https://mths.be/punycode
 Vcs-Git: https://salsa.debian.org/js-team/node-punycode.git
@@ -20,8 +19,11 @@ Package: node-punycode
 Architecture: all
 Depends:
  ${misc:Depends}
- , nodejs
+Provides: libjs-punycode (= ${source:Version})
+Recommends: javascript-common
 Multi-Arch: foreign
+Breaks: ruby-rails-assets-punycode (<< 2.2.3~), libjs-punycode (<< 2.2.3~)
+Replaces: ruby-rails-assets-punycode (<< 2.2.3~), libjs-punycode (<< 2.2.3~)
 Description: Nodejs robust Punycode converter fully RFC compliant
  node-punycode is a punycode converter conforming to RFC 3492 and RFC 5891,
  and works on nearly all JavaScript platforms.

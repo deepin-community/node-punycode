@@ -78,7 +78,7 @@ const testData = {
 		 * `b1abfaaepdrnnbgefbaDotcwatmq2g4l`
 		 * Without mixed-case annotation it has to encode to:
 		 * `b1abfaaepdrnnbgefbadotcwatmq2g4l`
-		 * https://github.com/bestiejs/punycode.js/issues/3
+		 * https://github.com/mathiasbynens/punycode.js/issues/3
 		 */
 		{
 			'description': 'Russian (Cyrillic)',
@@ -178,7 +178,7 @@ const testData = {
 			'decoded': 'ma\xF1ana.com',
 			'encoded': 'xn--maana-pta.com'
 		},
-		{ // https://github.com/bestiejs/punycode.js/issues/17
+		{ // https://github.com/mathiasbynens/punycode.js/issues/17
 			'decoded': 'example.com.',
 			'encoded': 'example.com.'
 		},
@@ -212,6 +212,10 @@ const testData = {
 			'description': 'Email address',
 			'decoded': '\u0434\u0436\u0443\u043C\u043B\u0430@\u0434\u0436p\u0443\u043C\u043B\u0430\u0442\u0435\u0441\u0442.b\u0440\u0444a',
 			'encoded': '\u0434\u0436\u0443\u043C\u043B\u0430@xn--p-8sbkgc5ag7bhce.xn--ba-lmcq'
+		},
+		{ // https://github.com/mathiasbynens/punycode.js/pull/115
+			'decoded': 'foo\x7F.example',
+			'encoded': 'foo\x7F.example'
 		}
 	],
 	'separators': [
@@ -294,6 +298,14 @@ describe('punycode.decode', function() {
 	}
 	it('handles uppercase Z', function() {
 		assert.deepEqual(punycode.decode('ZZZ'), '\u7BA5');
+	});
+	it('throws RangeError: Invalid input', function() {
+		assert.throws(
+			function() {
+				punycode.decode('ls8h=');
+			},
+			RangeError
+		);
 	});
 });
 
